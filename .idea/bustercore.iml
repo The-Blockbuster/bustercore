@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/busterd/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chain/chain-primitives/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chain/chain/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chain/chunks-primitives/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chain/chunks/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chain/client-primitives/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chain/client/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chain/epoch-manager/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chain/indexer-primitives/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chain/indexer/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chain/jsonrpc-adversarial-primitives/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chain/jsonrpc-primitives/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chain/jsonrpc/client/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chain/jsonrpc/jsonrpc-tests/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chain/jsonrpc/jsonrpc-tests/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/chain/jsonrpc/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chain/network/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chain/pool/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chain/rosetta-rpc/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chain/telemetry/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/core/account-id/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/core/async/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/core/chain-configs/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/core/crypto/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/core/dyn-configs/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/core/o11y/benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/core/o11y/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/core/primitives-core/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/core/primitives/benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/core/primitives/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/core/store/benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/core/store/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/genesis-tools/genesis-csv-to-json/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/genesis-tools/genesis-populate/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/genesis-tools/keypair-generator/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/integration-tests/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/nearcore/benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/nearcore/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/nearcore/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/runtime/near-test-contracts/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/runtime/near-vm-runner/fuzz/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/runtime/near-vm-runner/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/runtime/near-vm/compiler-singlepass/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/runtime/near-vm/compiler-test-derive/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/runtime/near-vm/compiler/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/runtime/near-vm/engine/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/runtime/near-vm/test-api/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/runtime/near-vm/test-generator/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/runtime/near-vm/types/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/runtime/near-vm/types/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/runtime/near-vm/vm/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/runtime/near-vm/wast/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/runtime/runtime-params-estimator/estimator-warehouse/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/runtime/runtime-params-estimator/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/runtime/runtime/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/runtime/runtime/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/test-utils/actix-test-utils/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test-utils/runtime-tester/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test-utils/store-validator/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test-utils/testlib/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tools/amend-genesis/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tools/chainsync-loadtest/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tools/cold-store/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tools/database/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tools/delay-detector/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tools/flat-storage/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tools/fork-network/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tools/indexer/example/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tools/mirror/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tools/mock-node/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tools/ping/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tools/restaked/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tools/rpctypegen/core/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tools/rpctypegen/macro/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tools/speedy_sync/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tools/state-parts/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tools/state-viewer/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tools/storage-usage-delta-calculator/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tools/themis/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tools/undo-block/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/utils/config/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/utils/fmt/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/utils/mainnet-res/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/utils/mainnet-res/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/utils/near-cache/benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/utils/near-cache/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/utils/near-performance-metrics-macros/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/utils/near-performance-metrics/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/utils/near-stable-hasher/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/utils/stdx/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

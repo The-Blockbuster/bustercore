@@ -1,0 +1,39 @@
+[package]
+name = "near-client-primitives"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "This crate hosts NEAR client-related error types"
+repository.workspace = true
+license.workspace = true
+publish = true
+
+[dependencies]
+actix.workspace = true
+ansi_term.workspace = true
+chrono.workspace = true
+once_cell.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+strum.workspace = true
+thiserror.workspace = true
+
+near-chain-primitives.workspace = true
+near-chain-configs.workspace = true
+
+near-chunks-primitives.workspace = true
+near-crypto.workspace = true
+near-primitives.workspace = true
+
+[features]
+nightly_protocol = [
+  "near-chain-configs/nightly_protocol",
+  "near-primitives/nightly_protocol",
+]
+nightly = [
+  "nightly_protocol",
+  "near-chain-configs/nightly",
+  "near-primitives/nightly",
+]
+sandbox = []

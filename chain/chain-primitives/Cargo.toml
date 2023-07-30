@@ -1,0 +1,20 @@
+[package]
+name = "near-chain-primitives"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "This crate hosts NEAR chain-related error types"
+repository.workspace = true
+license.workspace = true
+publish = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+chrono.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+
+near-primitives.workspace = true
+near-crypto.workspace = true
