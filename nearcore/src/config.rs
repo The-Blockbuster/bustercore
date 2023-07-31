@@ -904,7 +904,10 @@ fn generate_or_load_keys(
             generate_or_load_key(dir, &config.validator_key_file, account_id, None)?;
         }
         _ => {
-            let account_id = account_id.unwrap_or_else(|| "test.near".parse().unwrap());
+            // let account_id = account_id.unwrap_or_else(|| "test.near".parse().unwrap()); // 원본
+            let account_id = account_id.unwrap_or_else(|| "master.buster".parse().unwrap()); // 수정본
+            // TODO : 신지 여기 수정
+            // TODO : 중요!! 프로토콜 중 여기를 수정했음. 보상을 4%에서 2%로 줄임
             generate_or_load_key(dir, &config.validator_key_file, Some(account_id), test_seed)?;
         }
     }
