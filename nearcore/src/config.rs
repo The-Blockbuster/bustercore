@@ -1269,9 +1269,18 @@ pub fn init_testnet_configs(
         tracked_shards,
     );
     let log_config = LogConfig::default();
+    // for i in 0..(num_validator_seats + num_non_validator_seats) as usize {
+    //     let config = &configs[i];
+    //     let node_dir = dir.join(format!("{}{}", prefix, i));
+    //     fs::create_dir_all(node_dir.clone()).expect("Failed to create directory");
     for i in 0..(num_validator_seats + num_non_validator_seats) as usize {
         let config = &configs[i];
-        let node_dir = dir.join(format!("{}{}", prefix, i));
+        let node_dir_name = if i == 0 {
+            prefix.to_string()
+        } else {
+            format!("node{}", i - 1)
+        };
+        let node_dir = dir.join(node_dir_name);
         fs::create_dir_all(node_dir.clone()).expect("Failed to create directory");
 
         validator_signers[i]
