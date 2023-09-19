@@ -87,6 +87,7 @@ impl NeardCmd {
         match neard_cmd.subcmd {
             NeardSubCommand::Init(cmd) => cmd.run(&home_dir)?,
             NeardSubCommand::Localnet(cmd) => cmd.run(&home_dir),
+            NeardSubCommand::Mainnet(cmd) => cmd.run(&home_dir),
             NeardSubCommand::Run(cmd) => cmd.run(
                 &home_dir,
                 genesis_validation,
@@ -193,6 +194,7 @@ pub(super) enum NeardSubCommand {
     /// Sets up local configuration with all necessary files (validator key, node key, genesis and
     /// config)
     Localnet(LocalnetCmd),
+    Mainnet(LocalnetCmd),
     /// View DB state.
     #[clap(name = "view-state", alias = "view_state")]
     StateViewer(StateViewerCommand),
