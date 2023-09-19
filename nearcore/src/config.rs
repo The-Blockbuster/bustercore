@@ -1273,7 +1273,8 @@ pub fn init_testnet_configs(
         let config = &configs[i];
         let node_dir = dir.join(format!("{}{}", prefix, i));
         fs::create_dir_all(node_dir.clone()).expect("Failed to create directory");
-    // for i in 0..(num_validator_seats + num_non_validator_seats) as usize {
+        // TODO :신지 여기 수정하다가 원복함
+        // for i in 0..(num_validator_seats + num_non_validator_seats) as usize {
     //     let config = &configs[i];
     //     let node_dir_name = if i == 0 {
     //         prefix.to_string()
