@@ -84,7 +84,7 @@ const CHUNK_REQUEST_RETRY_PERIOD: u64 = 400;
 
 /// Expected epoch length.
 // pub const EXPECTED_EPOCH_LENGTH: BlockHeightDelta = (5 * 60 * 1000) / MIN_BLOCK_PRODUCTION_DELAY;
-pub const EXPECTED_EPOCH_LENGTH: BlockHeightDelta =90; // 테스트를 위해 에포크 길이를 줄였음
+pub const EXPECTED_EPOCH_LENGTH: BlockHeightDelta = 90; // 테스트를 위해 에포크 길이를 줄였음
 
 /// Criterion for kicking out block producers.
 pub const BLOCK_PRODUCER_KICKOUT_THRESHOLD: u8 = 90;
@@ -269,8 +269,7 @@ impl Default for Consensus {
             header_sync_progress_timeout: default_header_sync_progress_timeout(),
             header_sync_stall_ban_timeout: default_header_sync_stall_ban_timeout(),
             state_sync_timeout: default_state_sync_timeout(),
-            header_sync_expected_height_per_second: default_header_sync_expected_height_per_second(
-            ),
+            header_sync_expected_height_per_second: default_header_sync_expected_height_per_second(),
             sync_check_period: default_sync_check_period(),
             sync_step_period: default_sync_step_period(),
             doomslug_step_period: default_doomslug_step_period(),
@@ -359,6 +358,7 @@ pub struct Config {
 fn is_false(value: &bool) -> bool {
     !*value
 }
+
 impl Default for Config {
     fn default() -> Self {
         Config {
@@ -433,9 +433,9 @@ impl Default for SplitStorageConfig {
         SplitStorageConfig {
             enable_split_storage_view_client: default_enable_split_storage_view_client(),
             cold_store_initial_migration_batch_size:
-                default_cold_store_initial_migration_batch_size(),
+            default_cold_store_initial_migration_batch_size(),
             cold_store_initial_migration_loop_sleep_duration:
-                default_cold_store_initial_migration_loop_sleep_duration(),
+            default_cold_store_initial_migration_loop_sleep_duration(),
             cold_store_loop_sleep_duration: default_cold_store_loop_sleep_duration(),
         }
     }
@@ -469,9 +469,9 @@ impl Config {
             &mut serde_json::Deserializer::from_str(&json_str_without_comments),
             |field| unrecognised_fields.push(field.to_string()),
         )
-        .map_err(|_| ValidationError::ConfigFileError {
-            error_message: format!("Failed to deserialize config from {}", path.display()),
-        })?;
+            .map_err(|_| ValidationError::ConfigFileError {
+                error_message: format!("Failed to deserialize config from {}", path.display()),
+            })?;
 
         if !unrecognised_fields.is_empty() {
             let s = if unrecognised_fields.len() > 1 { "s" } else { "" };
@@ -941,10 +941,12 @@ pub fn init_configs(
     fs::create_dir_all(dir).with_context(|| anyhow!("Failed to create directory {:?}", dir))?;
 
     assert_ne!(chain_id, Some("".to_string()));
-    let chain_id = match chain_id {
-        Some(chain_id) => chain_id,
-        None => random_chain_id(),
-    };
+    // let chain_id = match chain_id {
+    //     Some(chain_id) => chain_id,
+    //     None => random_chain_id(),
+    // };
+    let chain_id = "localnet".to_string();// TODO : 신지 여기 수정!! 원본은 위에 적힌 것임. 수정한 이유 : mainnet, testnet, betanet 등 무엇으로 입력하든 내부적으로는 localnet으로 설정해야하기 때문. 그래야 .buster가 올바르게 생성됨.
+    // println!("chain_id : {}", chain_id);
 
     // Check if config already exists in home dir.
     if dir.join(CONFIG_FILENAME).exists() {
@@ -1368,8 +1370,8 @@ impl From<NodeKeyFile> for KeyFile {
             } else {
                 this.account_id
             }
-            .try_into()
-            .unwrap(),
+                .try_into()
+                .unwrap(),
             public_key: this.public_key,
             secret_key: this.secret_key,
         }
@@ -1507,7 +1509,7 @@ fn test_init_config_localnet() {
         None,
         None,
     )
-    .unwrap();
+        .unwrap();
     let genesis =
         Genesis::from_file(temp_dir.path().join("genesis.json"), GenesisValidationMode::UnsafeFast)
             .unwrap();
@@ -1516,21 +1518,21 @@ fn test_init_config_localnet() {
     assert_eq!(
         account_id_to_shard_id(
             &AccountId::from_str("foobar.near").unwrap(),
-            &genesis.config.shard_layout
+            &genesis.config.shard_layout,
         ),
         0
     );
     assert_eq!(
         account_id_to_shard_id(
             &AccountId::from_str("shard1.test.near").unwrap(),
-            &genesis.config.shard_layout
+            &genesis.config.shard_layout,
         ),
         1
     );
     assert_eq!(
         account_id_to_shard_id(
             &AccountId::from_str("shard2.test.near").unwrap(),
-            &genesis.config.shard_layout
+            &genesis.config.shard_layout,
         ),
         2
     );
@@ -1563,7 +1565,7 @@ fn test_init_config_localnet_keep_config_create_node_key() {
         None,
         None,
     )
-    .unwrap();
+        .unwrap();
 
     // Check that the key files exist.
     let _genesis =
@@ -1596,7 +1598,7 @@ fn test_init_config_localnet_keep_config_create_node_key() {
         None,
         None,
     )
-    .unwrap();
+        .unwrap();
 
     // Check that the key files got created.
     let _node_signer = InMemorySigner::from_file(&node_key_file).unwrap();
@@ -1611,7 +1613,7 @@ fn test_config_from_file_skip_validation() {
     let base = Path::new(env!("CARGO_MANIFEST_DIR"));
 
     for (has_gc, path) in
-        [(true, "res/example-config-gc.json"), (false, "res/example-config-no-gc.json")]
+    [(true, "res/example-config-gc.json"), (false, "res/example-config-no-gc.json")]
     {
         let path = base.join(path);
         let data = std::fs::read(path).unwrap();
