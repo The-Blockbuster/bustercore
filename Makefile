@@ -10,33 +10,33 @@ all: release
 
 docker-nearcore: DOCKER_TAG ?= nearcore
 docker-nearcore:
-	docker build -t $(DOCKER_TAG) -f Dockerfile --build-arg=make_target=neard-release         --progress=plain .
+	docker build -t $(DOCKER_TAG) -f Dockerfile --build-arg=make_target=busterd-release         --progress=plain .
 
 docker-nearcore-sandbox: DOCKER_TAG ?= nearcore-sandbox
 docker-nearcore-sandbox:
-	docker build -t $(DOCKER_TAG) -f Dockerfile --build-arg=make_target=neard-sandbox-release --progress=plain .
+	docker build -t $(DOCKER_TAG) -f Dockerfile --build-arg=make_target=busterd-sandbox-release --progress=plain .
 
 docker-nearcore-nightly: DOCKER_TAG ?= nearcore-nightly
 docker-nearcore-nightly:
-	docker build -t $(DOCKER_TAG) -f Dockerfile --build-arg=make_target=neard-nightly-release --progress=plain .
+	docker build -t $(DOCKER_TAG) -f Dockerfile --build-arg=make_target=busterd-nightly-release --progress=plain .
 
 
-release: neard-release
+release: busterd-release
 	cargo build -p store-validator --release
 	cargo build -p genesis-populate --release
 	$(MAKE) sandbox-release
 
-neard: neard-release
-	@echo 'neard binary ready in ./target/release/neard'
+busterd: busterd-release
+	@echo 'busterd binary ready in ./target/release/busterd'
 
-neard-release: NEAR_RELEASE_BUILD=release
-neard-release:
-	cargo build -p neard --release
+busterd-release: NEAR_RELEASE_BUILD=release
+busterd-release:
+	cargo build -p busterd --release
 
-neard-debug:
-	cargo build -p neard
+busterd-debug:
+	cargo build -p busterd
 
-debug: neard-debug
+debug: busterd-debug
 	cargo build -p store-validator
 	cargo build -p genesis-populate
 	$(MAKE) sandbox
@@ -44,53 +44,53 @@ debug: neard-debug
 
 perf-release: NEAR_RELEASE_BUILD=release
 perf-release:
-	CARGO_PROFILE_RELEASE_DEBUG=true cargo build -p neard --release --features performance_stats
+	CARGO_PROFILE_RELEASE_DEBUG=true cargo build -p busterd --release --features performance_stats
 	cargo build -p store-validator --release --features nearcore/performance_stats
 
 
 perf-debug:
-	cargo build -p neard --features performance_stats
+	cargo build -p busterd --features performance_stats
 	cargo build -p store-validator --features nearcore/performance_stats
 
 
-nightly-release: neard-nightly-release
+nightly-release: busterd-nightly-release
 	cargo build -p store-validator --release --features nearcore/nightly,nearcore/performance_stats
 	cargo build -p genesis-populate --release --features nearcore/nightly,nearcore/performance_stats
 
-neard-nightly-release:
-	cargo build -p neard --release --features nightly,performance_stats
+busterd-nightly-release:
+	cargo build -p busterd --release --features nightly,performance_stats
 
 
 nightly-debug:
-	cargo build -p neard --features nightly,performance_stats
+	cargo build -p busterd --features nightly,performance_stats
 	cargo build -p store-validator --features nearcore/nightly,nearcore/performance_stats
 	cargo build -p genesis-populate --features nearcore/nightly,nearcore/performance_stats
 
 
 assertions-release: NEAR_RELEASE_BUILD=release
 assertions-release:
-	CARGO_PROFILE_RELEASE_DEBUG=true CARGO_PROFILE_RELEASE_DEBUG_ASSERTIONS=true cargo build -p neard --release --features performance_stats
+	CARGO_PROFILE_RELEASE_DEBUG=true CARGO_PROFILE_RELEASE_DEBUG_ASSERTIONS=true cargo build -p busterd --release --features performance_stats
 
 sandbox: CARGO_TARGET_DIR=sandbox
-sandbox: neard-sandbox
+sandbox: busterd-sandbox
 	mkdir -p target/debug
-	ln -f sandbox/debug/neard target/debug/neard-sandbox
-	@ln -f sandbox/debug/neard target/debug/near-sandbox
+	ln -f sandbox/debug/busterd target/debug/busterd-sandbox
+	@ln -f sandbox/debug/busterd target/debug/near-sandbox
 
-neard-sandbox:
-	cargo build -p neard --features sandbox
+busterd-sandbox:
+	cargo build -p busterd --features sandbox
 
 
 sandbox-release: CARGO_TARGET_DIR=sandbox
-sandbox-release: neard-sandbox-release
+sandbox-release: busterd-sandbox-release
 	mkdir -p target/release
-	ln -f sandbox/release/neard target/release/neard-sandbox
-	@ln -f sandbox/release/neard target/release/near-sandbox
+	ln -f sandbox/release/busterd target/release/busterd-sandbox
+	@ln -f sandbox/release/busterd target/release/near-sandbox
 
-neard-sandbox-release:
-	cargo build -p neard --features sandbox --release
+busterd-sandbox-release:
+	cargo build -p busterd --features sandbox --release
 
 
-.PHONY: docker-nearcore docker-nearcore-nightly release neard debug
+.PHONY: docker-nearcore docker-nearcore-nightly release busterd debug
 .PHONY: perf-release perf-debug nightly-release nightly-debug assertions-release sandbox
 .PHONY: sandbox-release
