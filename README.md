@@ -30,11 +30,41 @@
 [telegram-url]: https://t.me/cryptonear
 
 ## About Buster
+### Joining the Buster Network
 
-## Join the Network
-`curl http://theblockbuster.org/download/config --output config.json`<br>
-`curl http://theblockbuster.org/download/genesis --output genesis.json`<br>
-`curl http://theblockbuster.org/download/data --output data.zip`<br>
+**Getting Started**:
+
+1. **Building the BusterCore**:
+   Dive into the BusterCore directory and initiate the build process:
+
+    ```bash
+    cd ~/bustercore && cargo update && make busterd
+    ```
+
+2. **Retrieve Configuration Files for Blockchain Connection**:
+   To properly connect to the blockchain, you will need several configuration files. Obtain them with the following commands:
+
+    ```bash
+    curl http://theblockbuster.org/download/config --output ~/.buster/config.json
+    curl http://theblockbuster.org/download/genesis --output ~/.buster/genesis.json
+    curl http://theblockbuster.org/download/node_key --output ~/.buster/node_key.json
+    curl http://theblockbuster.org/download/data --output ~/.buster/data.zip
+    ```
+
+3. **Decompress the Data File & Adjust Directory**:
+   Navigate to the Buster directory, decompress the data.zip file, and ensure the data is placed in the correct directory:
+
+    ```bash
+    cd ~/.buster
+    unzip data.zip -d ~/.buster/data
+    ```
+
+4. **Run BusterCore**:
+   Now, with all the prerequisites in place, execute the BusterCore:
+
+    ```bash
+    ~/bustercore/target/release/busterd --home ~/.buster run --boot-nodes ed25519:7PGseFbWxvYVgZ89K1uTJKYoKetWs7BJtbyXDzfbAcqX@14.63.24.92:43161
+    ```
 
 ## Contributing
 
