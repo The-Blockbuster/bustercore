@@ -133,6 +133,7 @@ pub const BETANET: &str = "betanet";
 pub const MAINNET_TELEMETRY_URL: &str = "https://explorer.mainnet.near.org/api/nodes";
 pub const NETWORK_TELEMETRY_URL: &str = "https://explorer.{}.near.org/api/nodes";
 
+
 /// The rate at which the gas price can be adjusted (alpha in the formula).
 /// The formula is
 /// gas_price_t = gas_price_{t-1} * (1 + (gas_used/gas_limit - 1/2) * alpha))

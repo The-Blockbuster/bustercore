@@ -34,8 +34,8 @@
 
 **Getting Started**:
 
-1. **Building the BusterCore**:<br>
-   Dive into the BusterCore directory and initiate the build process:
+1. **Building the bustercore**:<br>
+   Dive into the bustercore directory and initiate the build process:
 
     ```bash
     cd ~/bustercore && cargo update && make busterd
@@ -59,8 +59,8 @@
     unzip data.zip -d ~/.buster/data
     ```
 
-4. **Run BusterCore**:<br>
-   Now, with all the prerequisites in place, execute the BusterCore:
+4. **Run bustercore**:<br>
+   Now, with all the prerequisites in place, execute the bustercore:
 
     ```bash
     ~/bustercore/target/release/busterd --home ~/.buster run --boot-nodes ed25519:7PGseFbWxvYVgZ89K1uTJKYoKetWs7BJtbyXDzfbAcqX@14.63.24.92:43161
