@@ -34,14 +34,14 @@
 
 **Getting Started**:
 
-1. **Building the BusterCore**:
+1. **Building the BusterCore**:<br>
    Dive into the BusterCore directory and initiate the build process:
 
     ```bash
     cd ~/bustercore && cargo update && make busterd
     ```
 
-2. **Retrieve Configuration Files for Blockchain Connection**:
+2. **Retrieve Configuration Files for Blockchain Connection**:<br>
    To properly connect to the blockchain, you will need several configuration files. Obtain them with the following commands:
 
     ```bash
@@ -51,7 +51,7 @@
     curl http://theblockbuster.org/download/data --output ~/.buster/data.zip
     ```
 
-3. **Decompress the Data File & Adjust Directory**:
+3. **Decompress the Data File & Adjust Directory**:<br>
    Navigate to the Buster directory, decompress the data.zip file, and ensure the data is placed in the correct directory:
 
     ```bash
@@ -59,7 +59,7 @@
     unzip data.zip -d ~/.buster/data
     ```
 
-4. **Run BusterCore**:
+4. **Run BusterCore**:<br>
    Now, with all the prerequisites in place, execute the BusterCore:
 
     ```bash
