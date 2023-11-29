@@ -45,10 +45,10 @@
    To properly connect to the blockchain, you will need several configuration files. Obtain them with the following commands:
 
     ```bash
-    curl http://theblockbuster.org/download/config --output ~/.buster/config.json
-    curl http://theblockbuster.org/download/genesis --output ~/.buster/genesis.json
-    curl http://theblockbuster.org/download/node_key --output ~/.buster/node_key.json
-    curl http://theblockbuster.org/download/data --output ~/.buster/data.zip
+    curl http://data.theblockbuster.org/download/config --output ~/.buster/config.json
+    curl http://data.theblockbuster.org/download/genesis --output ~/.buster/genesis.json
+    curl http://data.theblockbuster.org/download/node_key --output ~/.buster/node_key.json
+    curl http://data.theblockbuster.org/download/data --output ~/.buster/data.zip
     ```
 
 3. **Decompress the Data File & Adjust Directory**:<br>
